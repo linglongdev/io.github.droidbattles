@@ -1,0 +1,24 @@
+From 88c33aec0dd81c6c97eb66c6179e40264be5a94b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 15 Aug 2024 10:27:01 +0800
+Subject: [PATCH] install
+
+---
+ src/droidbattles.h | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/droidbattles.h b/src/droidbattles.h
+index cabb437..5665597 100644
+--- a/src/droidbattles.h
++++ b/src/droidbattles.h
+@@ -42,6 +42,7 @@
+ #include <qpixmapcache.h>
+ #include <QPointer>
+ 
++#include <array>
+ // application specific includes
+ //#include "resource.h"
+ 
+-- 
+2.43.4
+

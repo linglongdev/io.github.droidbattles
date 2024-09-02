@@ -1,0 +1,48 @@
+From 17f42bdec25460fc611741e325a641db3d972171 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 15 Aug 2024 10:30:45 +0800
+Subject: [PATCH] install
+
+---
+ droidbattles.desktop | 11 +++++++++++
+ droidbattles.pro     |  6 +++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 droidbattles.desktop
+
+diff --git a/droidbattles.desktop b/droidbattles.desktop
+new file mode 100644
+index 0000000..8ca0b65
+--- /dev/null
++++ b/droidbattles.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Categories=Accessibility;Qt;Utility;
++Exec=droidbattles
++Name=droidbattles
++Name[zh_CN]=droidbattles
++Icon=metalback2
++StartupNotify=false
++Terminal=false
++Type=Application
++GenericName=droidbattles
++Version=1.0.7
+diff --git a/droidbattles.pro b/droidbattles.pro
+index 0cd3ff7..6ec9711 100644
+--- a/droidbattles.pro
++++ b/droidbattles.pro
+@@ -131,7 +131,11 @@ RESOURCES += images.qrc \
+     doc.qrc
+ 
+ unix:!mac {
+-    isEmpty(PREFIX):PREFIX = /usr
+     target.path = $$PREFIX/bin
+     INSTALLS += target
++    desktop.files = droidbattles.desktop
++    desktop.path = $$PREFIX/share/applications/
++    icons.path = $$PREFIX/share/icons
++    icons.files = images/metalback2.png
++    INSTALLS += desktop icons
+ }
+-- 
+2.43.4
+

@@ -1,0 +1,29 @@
+version: "1"
+
+package:
+  id: io.github.droidbattles
+  name: droidbattles
+  version: 1.0.6.1
+  kind: app
+  description: |
+    A programming game, where you program bots in assembly.
+
+command:
+  - /opt/apps/io.github.droidbattles/files/bin/droidbattles
+
+base: org.deepin.foundation/23.0.0
+runtime: org.deepin.Runtime/23.0.1
+
+sources:
+  - kind: git
+    url: https://github.com/sandsmark/droidbattles.git
+    version: master
+    commit: 8e47dfec373b8cd1ae523785509afcd2499f65bd
+
+build: |
+  cd /project/linglong/sources/droidbattles.git
+  git apply ../../../0001-install.patch
+  git apply ../../../0002-install.patch
+  qmake -makefile PREFIX=${PREFIX} LIB_INSTALL_DIR=${PREFIX}/lib/${TRIPLET}
+  make -j$(nproc)
+  make install
